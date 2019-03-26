@@ -11,7 +11,7 @@ public class UitvoerenToets {
     }
 
     private static void uitvoerenToets(Toets toets, int punten, Scanner scanner) {
-        for (int i = 1; i < toets.getAantalVragen(); i++) {
+        for (int i = 0; i < toets.getAantalVragen(); i++) {
             System.out.println(toets.getVraag(i).getVraag());
             if(toets.getVraag(i) instanceof Meerkeuzevraag){
                 for (int j = 0; j <toets.getVraag(i).getAntwoord().size() ; j++) {

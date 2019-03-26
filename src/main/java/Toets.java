@@ -15,12 +15,11 @@ public class Toets {
     }
 
     public Vraag getVraag(int vraagnummer){
-        return vragen.get(vraagnummer-1);
+        return vragen.get(vraagnummer);
     }
 
     public int checkAntwoord(String antwoord, int vraagnummer){
         ArrayList<Antwoord> antwoorden = vragen.get(vraagnummer).getAntwoord();
-        System.out.println(vraagnummer);
         for (int i = 0; i < antwoorden.size(); i++) {
             if(antwoorden.get(i).getAntwoord().equals(antwoord) && antwoorden.get(i).isCorrect()){
                 System.out.println("lekker gast");

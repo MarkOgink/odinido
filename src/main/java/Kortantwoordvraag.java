@@ -6,5 +6,6 @@ public class Kortantwoordvraag extends Vraag {
 
     public void voegAntwoordToe(String antwoord){
         Antwoord nieuwAntwoord = new Antwoord(antwoord, true);
+        setAntwoord(nieuwAntwoord);
     }
 }
