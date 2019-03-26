@@ -55,9 +55,9 @@ public class OdinidoToetsbank {
     }
 
     public Toets selecteerToets(String toetscode) {
-        if (toetscode == "ODI23644129") {
+        if (toetscode.equals("ODI23644129")) {
             return maakToetsODI23644129();
-        } else if (toetscode == "ODI24878686") {
+        } else if (toetscode.equals("ODI24878686")) {
             return maakToetsODI24878686();
         } else {
             return null;

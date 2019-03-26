@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public abstract class Vraag {
-    private int vraagnummer;
+    private int vraagnummer = 1;
     private String vraag;
-    private ArrayList<Antwoord> antwoorden;
+    private ArrayList<Antwoord> antwoorden = new ArrayList<Antwoord>();
     private int punten;
 
     public int getVraagnummer() {
