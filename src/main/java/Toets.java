@@ -19,12 +19,27 @@ public class Toets {
     }
 
     public int checkAntwoord(String antwoord, int vraagnummer){
+        //Get de antwoorden van de vraag met het bijbehorende vraagnummer.
         ArrayList<Antwoord> antwoorden = vragen.get(vraagnummer).getAntwoord();
-        for (int i = 0; i < antwoorden.size(); i++) {
-            if(antwoorden.get(i).getAntwoord().equals(antwoord) && antwoorden.get(i).isCorrect()){
-                System.out.println("lekker gast");
-                return vragen.get(vraagnummer).getPunten();
+
+        for(int i = 0; i < vragen.size();i++){
+            if(vragen.get(vraagnummer) instanceof Meerkeuzevraag){
+                for(int j = 0; j < antwoorden.size(); j++){
+                    if(antwoorden.get(j).isCorrect() && Integer.parseInt(antwoord) == j+1 ){
+                        System.out.println(antwoord);
+                        System.out.println(j);
+                        System.out.println("lekker gast meerkeuze");
+                        return vragen.get(vraagnummer).getPunten();
+                    }
+                }
+                // && antwoord.equals(""+j)
+            } else{
+                if (antwoorden.get(i).getAntwoord().equals(antwoord) && antwoorden.get(i).isCorrect()) {
+                    System.out.println("lekker gast");
+                    return vragen.get(vraagnummer).getPunten();
+                }
             }
+
         }
         return 0;
     }
