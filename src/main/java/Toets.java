@@ -22,25 +22,25 @@ public class Toets {
         //Get de antwoorden van de vraag met het bijbehorende vraagnummer.
         ArrayList<Antwoord> antwoorden = vragen.get(vraagnummer).getAntwoord();
 
-        for(int i = 0; i < vragen.size();i++){
-            if(vragen.get(vraagnummer) instanceof Meerkeuzevraag){
-                for(int j = 0; j < antwoorden.size(); j++){
-                    if(antwoorden.get(j).isCorrect() && Integer.parseInt(antwoord) == j+1 ){
-                        System.out.println(antwoord);
-                        System.out.println(j);
-                        System.out.println("lekker gast meerkeuze");
-                        return vragen.get(vraagnummer).getPunten();
-                    }
+        for(int j = 0; j < antwoorden.size(); j++) {
+            if (vragen.get(vraagnummer) instanceof Meerkeuzevraag) {
+
+                if (antwoorden.get(j).isCorrect() && Integer.parseInt(antwoord) == j + 1) {
+                    System.out.println(antwoord);
+                    System.out.println(j);
+                    System.out.println("lekker gast meerkeuze");
+                    return vragen.get(vraagnummer).getPunten();
                 }
+
                 // && antwoord.equals(""+j)
-            } else{
-                if (antwoorden.get(i).getAntwoord().equals(antwoord) && antwoorden.get(i).isCorrect()) {
+            } else {
+                if (antwoorden.get(j).getAntwoord().equals(antwoord) && antwoorden.get(j).isCorrect()) {
                     System.out.println("lekker gast");
                     return vragen.get(vraagnummer).getPunten();
                 }
             }
-
         }
+
         return 0;
     }
 
