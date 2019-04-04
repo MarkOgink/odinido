@@ -1,11 +1,11 @@
 public class OdinidoToetsbank {
 
-    private Toets toets;
+    private Kennistoets toets;
     private Meerkeuzevraag mcVraag;
     private Kortantwoordvraag kaVraag;
 
-    private Toets maakToetsODI23644129() {
-        toets = new Toets("ODI23644129", "Requirements");
+    private Kennistoets maakToetsODI23644129() {
+        toets = new Kennistoets("ODI23644129", "Requirements");
 
         mcVraag = new Meerkeuzevraag("Welke van de begrippen needs, features en requirements horen bij het solution domain?");
         mcVraag.voegAlternatiefToe("needs, features en requirements", false);
@@ -49,12 +49,12 @@ public class OdinidoToetsbank {
         return toets;
     }
 
-    private Toets maakToetsODI24878686() {
+    private Kennistoets maakToetsODI24878686() {
         // TO DO: vul hier zelf een toets in
         return null;
     }
 
-    public Toets selecteerToets(String toetscode) {
+    public Kennistoets selecteerToets(String toetscode) {
         if (toetscode.equals("ODI23644129")) {
             return maakToetsODI23644129();
         } else if (toetscode.equals("ODI24878686")) {

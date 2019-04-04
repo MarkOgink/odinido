@@ -5,8 +5,8 @@ public class Meerkeuzevraag extends Vraag{
         setVraagnummer(getVraagnummer());
     }
 
-    public void voegAlternatiefToe(String antwoord, boolean juist){
-        Antwoord alternatief = new Antwoord(antwoord, juist);
+    public void voegAlternatiefToe(String antwoord, boolean correct){
+        Antwoord alternatief = new Antwoord(antwoord, correct);
         setAntwoord(alternatief);
     }
 }

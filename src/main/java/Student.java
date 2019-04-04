@@ -1,18 +1,21 @@
+import java.util.Scanner;
+
 public class Student {
     private String naam;
-    private Toets toets;
-    private int punten;
+    private KennistoetsPerStudent kennistoetsPerStudent;
 
     public Student(String naam){
         this.naam = naam;
     }
 
-    public int getPunten() {
-        return punten;
-    }
+    public void voerKennistoetsUit(){
+        for (int i = 0; i < kennistoetsPerStudent.getKennistoets().getAantalVragen(); i++) {
 
-    public void setPunten(int punten) {
-        this.punten = punten;
+            kennistoetsPerStudent.toonVraag(i);
+            kennistoetsPerStudent.geefAntwoord(i);
+
+        }
+        System.out.println("Einde toets.");
     }
 
     public String getNaam() {
@@ -23,11 +26,12 @@ public class Student {
         this.naam = naam;
     }
 
-    public Toets getToets() {
-        return toets;
+
+    public KennistoetsPerStudent getKennistoets() {
+        return kennistoetsPerStudent;
     }
 
-    public void setToets(Toets toets) {
-        this.toets = toets;
+    public void setKennistoets(Kennistoets kennistoets) {
+        this.kennistoetsPerStudent = new KennistoetsPerStudent(kennistoets);
     }
 }

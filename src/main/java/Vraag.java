@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public abstract class Vraag {
-    private int vraagnummer = 0;
+    private int vraagnummer;
     private String vraag;
     private ArrayList<Antwoord> antwoorden = new ArrayList<Antwoord>();
     private int punten;
@@ -30,7 +30,7 @@ public abstract class Vraag {
         this.punten = punten;
     }
 
-    public ArrayList<Antwoord> getAntwoord() {
+    public ArrayList<Antwoord> getAntwoorden() {
         return antwoorden;
     }
 
